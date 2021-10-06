@@ -1,43 +1,26 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-
+import { AppBar, Toolbar ,Typography} from "@material-ui/core";
+import React from "react";
+import Cart from './SimpleCart ';
+import { Link } from 'react-router-dom';
 export default function Header() {
-    return (
-      <>
-        <ButtonAppBar />
-      </>
-    );
-  }
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-  }));
-
-
-  function ButtonAppBar() {
-    const classes = useStyles();
+  const displayDesktop = () => {
+    return ( <Toolbar>
+        <Link to="/">
+    <Typography variant='h4' id='tittle' >
+           Mariam Al-Shammari STORE
+          </Typography>
+        
+          </Link>
+      </Toolbar>
+    )    
+  };
   
-    return (
-      <div className={classes.root}>
-        <AppBar id='nav-bar' position='static'>
-          <Toolbar>
-            <IconButton edge='start' className={classes.menuButton} color='inherit' aria-label='menu'></IconButton>
-            <Typography variant='h4' className={classes.title}>
-             Mariam Al-Shammari Store
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
-    );
-  }
+  return (
+    <header id='nav-bar'>
+      <AppBar id='nav-bar'>
+        {displayDesktop()}
+        <Cart />
+      </AppBar>
+    </header>
+  );
+}

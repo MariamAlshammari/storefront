@@ -1,21 +1,21 @@
-export const initialState = {
-    filteredProducts: [],
-  };
+// export const initialState = {
+//     filteredProducts: [],
+//   };
   
-  export const productReducer = (state = initialState, action) => {
+//   export const productReducer = (state = initialState, action) => {
 
-    const { type, payload } = action;
+//     const { type, payload } = action;
   
-    switch (type) {
-      case 'FILTER_PRODUCTS':
-        const filteredProducts = payload.allProducts.filter((product) => product.category == payload.categorayName);
+//     switch (type) {
+//       case 'FILTER_PRODUCTS':
+//         const filteredProducts = payload.allProducts.filter((product) => product.category == payload.categorayName);
   
-        return { filteredProducts };
+//         return { filteredProducts };
   
 
-      default:
-        return state;
+//       default:
+//         return state;
 
-    }
+//     }
     
-  };
+//   };
